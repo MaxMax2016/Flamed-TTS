@@ -1,0 +1,14 @@
+target_dim: 256
+spk_dim: 256
+cond_dim: 384
+downsampling_stages: 1
+hidden_dim: 1024
+n_layers: 4
+n_quantizers: 6
+sigma_min: 1e-6
+convnext:
+  kernel_size: 31
+  stride: 1
+  padding: 15
+  expand: 1
+  groups: null

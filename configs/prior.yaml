@@ -1,0 +1,33 @@
+variance_adaptor:
+  sigma_min: 1e-4
+  duration_generator:
+    input_size: 192
+    filter_size: 384
+    kernel_size: 3
+    time_scale: 4
+    drop_out: 0.1
+  sil_generator:
+    input_size: 192
+    filter_size: 384
+    kernel_size: 3
+    time_scale: 4
+    drop_out: 0.1
+transformer:
+  encoder_layer: 6
+  encoder_head: 4
+  encoder_hidden: 192
+  encoder_conv_filter_size: 768
+  encoder_conv_kernel_size: [9, 1]
+  encoder_dropout: 0.1
+  encoder_max_seq_len: 4096
+  decoder_shared_layers: 2
+  decoder_layers: [1, 2, 2, 3, 3, 3]
+  decoder_head: 12
+  decoder_hidden: 384
+  decoder_conv_filter_size: 1536
+  decoder_conv_kernel_size: [3, 1]
+  decoder_dropout: 0.1
+  decoder_max_seq_len: 8192
+codec:
+    vocab_size: 1024
+    n_quantizers: 6
