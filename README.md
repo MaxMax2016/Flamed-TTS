@@ -57,7 +57,7 @@ python synthesize.py \
 	--nsteps-denoiser 128 \ # number of sampling steps to generate latent representations of speech, 64 as default
 	--temp-durgen 1.0 \ # nosie scaling factor to generate both phoneme durations and silences, 0.3 as default
 	--temp-denoiser 0.3 \ # nosie scaling factor to generate latent representations of speech, 0.3 as default
-	----output-dir path/to/dir/for/output/audio/files \
+	--output-dir path/to/dir/for/output/audio/files \
 	--device cuda:0 # cuda:0 as default
 ```
 
@@ -68,6 +68,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
