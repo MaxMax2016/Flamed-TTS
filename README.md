@@ -5,21 +5,26 @@
 	<img src="https://github.com/flamedtts/Flamed-TTS/blob/main/figs/CodeDecoder_Denoiser.png" width="640" style="display: block; margin: auto;"/>
 </div>
 
-### TL;DR
+# 🎯 Overview
 
-OZSpeech is a cutting-edge Zero-Shot TTS model that utilizes Optimal Transport Flow Matching for one-step sampling, significantly reducing inference time while delivering high-quality synthesized speech.
+This repo implements a novel zero-shot TTS framework, named Flamed-TTS, focusing on the low-latency generation and dynamic pacing in speech synthesis.
 
-# Installation requirement
+# 🛠️ Installation Dependencies
 
 Prepare your environment by creating a conda setup, preferably on Linux. Then, install the necessary requirements using pip:
 
-```
+Prepare your environment by creating a conda setup, preferably on Linux. Then, install the necessary requirements using pip:
+```bash
+# Create a python 3.10 conda env (you could also use virtualenv)
+conda create -n flamed-tts python=3.10
+conda activate flamed-tts
+cd FlamedTTS
 pip install -r requirements.txt
 ```
 
 If you plan to train the model yourself, a GPU is advised. However, you can still generate samples using our pretrained models without a GPU.
 
-# Inference
+# 🚀 Inference
 
 ### Download pretrained weights
 
@@ -54,13 +59,14 @@ The `LibriSpeech-test-clean` dataset was utilized to synthesize and evaluate our
 
 The `synthesize.ipynb` notebook offers a user-friendly interface for inference. You can directly provide a single pair consisting of the prompt audio file path and the target text for synthesis. Give it a try!
 
-# Training OZSpeech from scratch
+# 🔄 Training Flamed-TTS from scratch
 
 TBD.
 
-# Disclaimer
+# ⚠️ Disclaimer
 
 Any organization or individual is prohibited from using any technology mentioned in this paper to generate or edit someone's speech without his/her consent, including but not limited to government leaders, political figures, and celebrities. If you do not comply with this item, you could be in violation of copyright laws.
+
 
 
 
