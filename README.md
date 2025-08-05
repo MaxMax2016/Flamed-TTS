@@ -10,13 +10,11 @@
 </div>
 
 # 🔥 News
-[2025.08] Release checkpoint
-
-[2025.08] Release inference code
-
-[2025.08] Init Repo
-
-[2025.08] Submitted to `AAAI 2026`
+- [Coming soon] Release training instructions
+- [2025.08] Release checkpoint
+- [2025.08] Release inference code
+- [2025.08] Init Repo
+- [2025.08] Submitted to `AAAI 2026`
 
 # 🎯 Overview
 
@@ -70,6 +68,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
