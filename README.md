@@ -12,8 +12,6 @@ This repo implements a novel zero-shot TTS framework, named Flamed-TTS, focusing
 # 🛠️ Installation Dependencies
 
 Prepare your environment by creating a conda setup, preferably on Linux. Then, install the necessary requirements using pip:
-
-Prepare your environment by creating a conda setup, preferably on Linux. Then, install the necessary requirements using pip:
 ```bash
 # Create a python 3.10 conda env (you could also use virtualenv)
 conda create -n flamed-tts python=3.10
@@ -66,6 +64,7 @@ TBD.
 # ⚠️ Disclaimer
 
 Any organization or individual is prohibited from using any technology mentioned in this paper to generate or edit someone's speech without his/her consent, including but not limited to government leaders, political figures, and celebrities. If you do not comply with this item, you could be in violation of copyright laws.
+
 
 
 
