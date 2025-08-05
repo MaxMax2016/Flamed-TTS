@@ -48,7 +48,7 @@ Script `synthesize.py` provides end-to-end pipeline for inference. Please follow
 
 ```
 python synthesize.py \
-	--ckpt-path path/to/ckpt.pt \
+	--ckpt-path "path/to/ckpt.pt" \
  	--cfg-path path/to/config.yaml \
 	--text "content to be synthesized" \
 	--prompt-dir path/to/folder/of/prompt/audio/files \
@@ -68,6 +68,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
