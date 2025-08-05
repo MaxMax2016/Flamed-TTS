@@ -1,4 +1,4 @@
-# OZSpeech: One-step Zero-shot Speech Synthesis with Learned-Prior-Conditioned Flow Matching
+# Flamed-TTS: Flow Matching Attention-Free Models for Efficient Generating and Dynamic Pacing Zero-shot Text-to-Speech
 
 [![python](https://img.shields.io/badge/Python-3.10-brightgreen)]([https://github.com/SWivid/F5-TTS](https://github.com/flamedtts/Flamed-TTS))
 [![arXiv](https://img.shields.io/badge/arXiv-2410.06885-b31b1b.svg?logo=arXiv)]()
@@ -56,6 +56,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
