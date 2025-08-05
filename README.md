@@ -42,9 +42,9 @@ To perform inference with pretrained weights, you must download the pretrained w
 * With FaCodec, you can download the FaCodec Encoder and FaCodec Decoder directly from Hugging Face: [FaCodec Encoder](https://huggingface.co/amphion/naturalspeech3_facodec/blob/main/ns3_facodec_encoder.bin), [FaCodec Decoder](https://huggingface.co/amphion/naturalspeech3_facodec/blob/main/ns3_facodec_decoder.bin).
 * With Flamed-TTS, please refer [this link](https://drive.google.com/drive/folders/17A5OJoF6yUqiy62n1ghEGJ6EwHUexUEs?usp=sharing). You need to download both pretrained weights and config file for initializing model.
 
-### Inference using python script
+### Inference sample(s) with given content and speech prompt(s)
 
-Script `synthesize.py` provides end-to-end pipeline for inference. Please follow the instructions:
+Script `synthesize.py` provides end-to-end pipeline for generaing a single or multiple samples with an identical content and serveral speech prompts. Please follow the instructions:
 
 ```bash
 python synthesize.py \
@@ -61,6 +61,25 @@ python synthesize.py \
 	--device "cuda:0" # cuda:0 as default
 ```
 
+### Inference sample(s) using metadata file
+Script `synthesize_via_metadata.py` provides end-to-end pipeline for generating sampling using metadata. Please follow the instructions:
+
+```bash
+python synthesize.py \
+	--ckpt-path "path/to/ckpt.pt" \
+ 	--cfg-path "path/to/config.yaml" \
+	--text "content to be synthesized" \
+	--prompt-dir "path/to/folder/of/prompt/audio/files" \
+	--prompt-list "prompt_1.wav prompt_2.wav prompt_3.wav" \ # list of prompt filenames to be synthesized
+	--nsteps-durgen "16" \ # number of sampling steps to generate both phoneme durations and silences, 64 as default
+	--nsteps-denoiser "128" \ # number of sampling steps to generate latent representations of speech, 64 as default
+	--temp-durgen "1.0" \ # nosie scaling factor to generate both phoneme durations and silences, 0.3 as default
+	--temp-denoiser "0.3" \ # nosie scaling factor to generate latent representations of speech, 0.3 as default
+	--output-dir "path/to/dir/for/output/audio/files" \
+	--device "cuda:0" # cuda:0 as default
+```
+
+
 # 🔄 Training Flamed-TTS from scratch
 
 TBD.
@@ -68,6 +87,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
