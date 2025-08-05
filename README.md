@@ -1,7 +1,7 @@
 # OZSpeech: One-step Zero-shot Speech Synthesis with Learned-Prior-Conditioned Flow Matching
 
-![Overall Architecture](https://github.com/ozspeech/OZSpeech/blob/main/figs/Flamed-TTS.png)
-![Overall Architecture](https://github.com/ozspeech/OZSpeech/blob/main/figs/CodeDecoder_Denoiser.png)
+![Overall Architecture](https://github.com/flamedtts/Flamed-TTS/blob/main/figs/Flamed-TTS.png)
+![Overall Architecture](https://github.com/flamedtts/Flamed-TTS/blob/main/figs/CodeDecoder_Denoiser.png)
 
 ### TL;DR
 
