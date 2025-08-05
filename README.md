@@ -46,19 +46,19 @@ To perform inference with pretrained weights, you must download the pretrained w
 
 Script `synthesize.py` provides end-to-end pipeline for inference. Please follow the instructions:
 
-```
+```bash
 python synthesize.py \
 	--ckpt-path "path/to/ckpt.pt" \
- 	--cfg-path path/to/config.yaml \
+ 	--cfg-path "path/to/config.yaml" \
 	--text "content to be synthesized" \
-	--prompt-dir path/to/folder/of/prompt/audio/files \
-	--prompt-list prompt_1.wav prompt_2.wav prompt_3.wav \ # list of prompt filenames to be synthesized
-	--nsteps-durgen 16 \ # number of sampling steps to generate both phoneme durations and silences, 64 as default
-	--nsteps-denoiser 128 \ # number of sampling steps to generate latent representations of speech, 64 as default
-	--temp-durgen 1.0 \ # nosie scaling factor to generate both phoneme durations and silences, 0.3 as default
-	--temp-denoiser 0.3 \ # nosie scaling factor to generate latent representations of speech, 0.3 as default
-	--output-dir path/to/dir/for/output/audio/files \
-	--device cuda:0 # cuda:0 as default
+	--prompt-dir "path/to/folder/of/prompt/audio/files" \
+	--prompt-list "prompt_1.wav prompt_2.wav prompt_3.wav" \ # list of prompt filenames to be synthesized
+	--nsteps-durgen "16" \ # number of sampling steps to generate both phoneme durations and silences, 64 as default
+	--nsteps-denoiser "128" \ # number of sampling steps to generate latent representations of speech, 64 as default
+	--temp-durgen "1.0" \ # nosie scaling factor to generate both phoneme durations and silences, 0.3 as default
+	--temp-denoiser "0.3" \ # nosie scaling factor to generate latent representations of speech, 0.3 as default
+	--output-dir "path/to/dir/for/output/audio/files" \
+	--device "cuda:0" # cuda:0 as default
 ```
 
 # 🔄 Training Flamed-TTS from scratch
@@ -68,6 +68,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
