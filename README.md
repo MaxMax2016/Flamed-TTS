@@ -9,6 +9,12 @@
 	<img src="https://github.com/flamedtts/Flamed-TTS/blob/main/figs/CodeDecoder_Denoiser.png" width="640" style="display: block; margin: auto;"/>
 </div>
 
+# 🔥 News
+[2025.08] Release checkpoint
+[2025.08] Release inference code
+[2025.08] Init Repo
+[2025.08] Submitted to `AAAI 2026`
+
 # 🎯 Overview
 
 This repo implements a novel zero-shot TTS framework, named Flamed-TTS, focusing on the low-latency generation and dynamic pacing in speech synthesis.
@@ -24,7 +30,7 @@ cd Flamed-TTS
 pip install -r requirements.txt
 ```
 
-If you plan to train the model yourself, a GPU is advised. However, you can still generate samples using our pretrained models without a GPU.
+To train the model yourself, a GPU is recommended for optimal performance. However, you can generate samples using our pretrained models without requiring a GPU.
 
 # 🚀 Inference
 
@@ -41,12 +47,17 @@ Script `synthesize.py` provides end-to-end pipeline for inference. Please follow
 
 ```
 python synthesize.py \
-	--text_file path/to/manifest.txt \
-	--input_dir path/to/dir/of/prompt/audio/files \
-	--output_dir path/to/dir/for/output/audio/files \
-	--ckpt_path path/to/ckpt.pt \
-	--cfg_path path/to/config.yaml \
-	--device cuda:0 # cpu as default
+	--ckpt-path path/to/ckpt.pt \
+ 	--cfg-path path/to/config.yaml \
+	--text "content to be synthesized" \
+	--prompt-dir path/to/folder/of/prompt/audio/files \
+	--prompt-list prompt_1.wav prompt_2.wav prompt_3.wav \ # list of prompt filenames to be synthesized
+	--nsteps-durgen 16 \ # number of sampling steps to generate both phoneme durations and silences, 64 as default
+	--nsteps-denoiser 128 \ # number of sampling steps to generate latent representations of speech, 64 as default
+	--temp-durgen 1.0 \ # nosie scaling factor to generate both phoneme durations and silences, 0.3 as default
+	--temp-denoiser 0.3 \ # nosie scaling factor to generate latent representations of speech, 0.3 as default
+	----output-dir path/to/dir/for/output/audio/files \
+	--device cuda:0 # cuda:0 as default
 ```
 
 # 🔄 Training Flamed-TTS from scratch
@@ -56,6 +67,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
