@@ -79,7 +79,7 @@ def synthesize(args):
     infer_times, output_durations = [], []
     with open(text_file, 'r') as fin:
         for line in tqdm(list(fin)):
-            filename, prompt_filename, transcript, _, _, dur  = line.rstrip().split('|')
+            filename, prompt_filename, transcript  = line.rstrip().split('|')
             prompt_filepath = os.path.join(input_dir, prompt_filename)
 
             if os.path.exists(os.path.join(output_dir, f'nfe{nsteps_denoiser}-temp{temp_denoiser}', f'{filename}')):
