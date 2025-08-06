@@ -61,7 +61,7 @@ python synthesize.py \
 	--device "cuda:0" # cuda:0 as default
 ```
 
-### Inference sample(s) using metadata file
+### Inference sample using metadata file
 Script `synthesize_via_metadata.py` provides end-to-end pipeline for generating multiple samples using metadata file. You need to prepare the metadata file (`.txt`), whose each line is formated as follows:
 
 ```
@@ -91,6 +91,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
