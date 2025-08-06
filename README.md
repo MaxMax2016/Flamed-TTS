@@ -39,7 +39,15 @@ To train the model yourself, a GPU is recommended for optimal performance. Howev
 
 To perform inference with pretrained weights, you must download the pretrained weights for both FaCodec and OZSpeech.
 
-* With FaCodec, you can download the FaCodec Encoder and FaCodec Decoder directly from Hugging Face: [FaCodec Encoder](https://huggingface.co/amphion/naturalspeech3_facodec/blob/main/ns3_facodec_encoder.bin), [FaCodec Decoder](https://huggingface.co/amphion/naturalspeech3_facodec/blob/main/ns3_facodec_decoder.bin).
+* With FaCodec, you can download the FaCodec Encoder and FaCodec Decoder directly from Hugging Face: [FaCodec Encoder](https://huggingface.co/amphion/naturalspeech3_facodec/blob/main/ns3_facodec_encoder.bin), [FaCodec Decoder](https://huggingface.co/amphion/naturalspeech3_facodec/blob/main/ns3_facodec_decoder.bin). After downloading process done, please move those checkpoint files to the directory:
+```
+oz2/
+└── models/
+    └── facodec/
+        └── checkpoints/
+            ├── ns3_facodec_encoder.bin
+            └── ns3_facodec_decoder.bin
+```
 * With Flamed-TTS, please refer [this link](https://drive.google.com/drive/folders/17A5OJoF6yUqiy62n1ghEGJ6EwHUexUEs?usp=sharing). You need to download both pretrained weights and config file for initializing model.
 
 ### Inference sample(s) with given content and speech prompt(s)
@@ -91,6 +99,7 @@ TBD.
 ## ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
