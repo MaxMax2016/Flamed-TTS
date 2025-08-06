@@ -83,7 +83,6 @@ python synthesize_via_metadata.py \
 	--ckpt-path "path/to/ckpt.pt" \
  	--cfg-path "path/to/config.yaml" \
 	--prompt-dir "path/to/folder/of/prompt/audio/files" \
-	--prompt-list "prompt_1.wav prompt_2.wav prompt_3.wav" \ 
 	--nsteps-durgen "16" \ 
 	--nsteps-denoiser "128" \
 	--temp-durgen "1.0" \ 
@@ -99,6 +98,7 @@ TBD.
 ## ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
