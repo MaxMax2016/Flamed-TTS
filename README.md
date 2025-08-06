@@ -44,7 +44,7 @@ To perform inference with pretrained weights, you must download the pretrained w
 
 ### Inference sample(s) with given content and speech prompt(s)
 
-Script `synthesize.py` provides end-to-end pipeline for generaing a single or multiple samples with an identical content and serveral speech prompts. Please follow the instructions:
+Script `synthesize.py` provides end-to-end pipeline for generaing a single or multiple samples with an identical content and serveral speech prompts. Please follow the CLI:
 
 ```bash
 python synthesize.py \
@@ -62,23 +62,27 @@ python synthesize.py \
 ```
 
 ### Inference sample(s) using metadata file
-Script `synthesize_via_metadata.py` provides end-to-end pipeline for generating sampling using metadata. Please follow the instructions:
+Script `synthesize_via_metadata.py` provides end-to-end pipeline for generating multiple samples using metadata file. You need to prepare the metadata file (`.txt`), whose each line is formated as follows:
 
+```
+<target_filename.wav>|<prompt_filename.wav>|<content_to_be_synthesized>
+Example: 4507-16021-0037.wav|4507-16021-0049.wav|there it clothes itself in word masks in metaphor rags\n
+```
+To generate multiple samples using metadata file, please follow the CLI:
 ```bash
-python synthesize.py \
+python synthesize_via_metadata.py \
+	--text-file "path/to/metadata.txt"\
 	--ckpt-path "path/to/ckpt.pt" \
  	--cfg-path "path/to/config.yaml" \
-	--text "content to be synthesized" \
 	--prompt-dir "path/to/folder/of/prompt/audio/files" \
-	--prompt-list "prompt_1.wav prompt_2.wav prompt_3.wav" \ # list of prompt filenames to be synthesized
-	--nsteps-durgen "16" \ # number of sampling steps to generate both phoneme durations and silences, 64 as default
-	--nsteps-denoiser "128" \ # number of sampling steps to generate latent representations of speech, 64 as default
-	--temp-durgen "1.0" \ # nosie scaling factor to generate both phoneme durations and silences, 0.3 as default
-	--temp-denoiser "0.3" \ # nosie scaling factor to generate latent representations of speech, 0.3 as default
+	--prompt-list "prompt_1.wav prompt_2.wav prompt_3.wav" \ 
+	--nsteps-durgen "16" \ 
+	--nsteps-denoiser "128" \
+	--temp-durgen "1.0" \ 
+	--temp-denoiser "0.3" \
 	--output-dir "path/to/dir/for/output/audio/files" \
-	--device "cuda:0" # cuda:0 as default
+	--device "cuda:0"
 ```
-
 
 # 🔄 Training Flamed-TTS from scratch
 
@@ -87,6 +91,7 @@ TBD.
 # ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
