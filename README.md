@@ -9,18 +9,18 @@
 	<img src="https://github.com/flamedtts/Flamed-TTS/blob/main/figs/CodeDecoder_Denoiser.png" width="640" style="display: block; margin: auto;"/>
 </div>
 
-# 🔥 News
+## 🔥 News
 - [Coming soon] Release training instructions
 - [2025.08] Release checkpoint
 - [2025.08] Release inference code
 - [2025.08] Init Repo
 - [2025.08] Submitted to `AAAI 2026`
 
-# 🎯 Overview
+## 🎯 Overview
 
 This repo implements a novel zero-shot TTS framework, named Flamed-TTS, focusing on the low-latency generation and dynamic pacing in speech synthesis.
 
-# 🛠️ Installation Dependencies
+## 🛠️ Installation Dependencies
 
 Prepare your environment by creating a conda setup, preferably on Linux. Then, install the necessary requirements using pip:
 ```bash
@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 To train the model yourself, a GPU is recommended for optimal performance. However, you can generate samples using our pretrained models without requiring a GPU.
 
-# 🚀 Inference
+## 🚀 Inference
 
 ### Download pretrained weights
 
@@ -84,13 +84,14 @@ python synthesize_via_metadata.py \
 	--device "cuda:0"
 ```
 
-# 🔄 Training Flamed-TTS from scratch
+## 🔄 Training Flamed-TTS from scratch
 
 TBD.
 
-# ⚠️ Disclaimer
+## ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
