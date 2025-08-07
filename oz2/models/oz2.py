@@ -26,6 +26,8 @@ class OZ2(OZ2Lightning):
         cfg['prob_generator']['device'] = device
         cfg['prior_generator']['device'] = device
         model = OZ2(cfg)
+        model.lexicon = model.read_lexicon()
+        model.g2p = G2p()
         ckpt = torch.load(ckpt_path, map_location=device, weights_only=weights_only)
         if not weights_only:
             model.load_state_dict(ckpt['state_dict'])
@@ -161,22 +163,13 @@ class OZ2(OZ2Lightning):
             mask=~tgt_mask.unsqueeze(-1),
         )
         
-        # revert codes into waveform
-        prior_codes = prior_logits.softmax(1).argmax(1)
-        prior_codes = prior_codes.permute(1, 0, 2)
-        prior_emb = codec_decoder.vq2emb(prior_codes)
-        prior_wav = codec_decoder.inference(prior_emb, timbre)
-        prior_wav = prior_wav[0][0].detach().cpu().numpy()
-        
         wav = codec_decoder.inference(x1, timbre)
         wav = wav[0][0].detach().cpu().numpy()
         
-        # get ending time of the progress
         end_time = time.time()
                 
         return {
             'wav': wav,
-            'prior_wav': prior_wav,
             'time': end_time - start_time,
         }
     
@@ -199,7 +192,7 @@ class OZ2(OZ2Lightning):
         codec_decoder = FACodecDecoder.from_pretrained(codec_cfg['decoder']).eval()
         return codec_encoder, codec_decoder
     
-    def _read_lexicon(self, lexicon_path=None):
+    def read_lexicon(self, lexicon_path=None):
         if not lexicon_path:
             lexicon_path = os.path.join(os.path.dirname(__file__), '..', 'lexicon', 'librispeech-lexicon.txt')
         lexicon = {}
@@ -219,15 +212,13 @@ class OZ2(OZ2Lightning):
         cleaners='english_cleaners'
         ):  
         text = text.rstrip(punctuation)
-        lexicon = self._read_lexicon(lexicon_path)
-        g2p = G2p()
         phones = []
         words = re.split(r"([,;.\-\?\!\s+])", text)
         for w in words:
-            if w.lower() in lexicon:
-                phones += lexicon[w.lower()]
+            if w.lower() in self.lexicon:
+                phones += self.lexicon[w.lower()]
             else:
-                phones += list(filter(lambda p: p != " ", g2p(w)))
+                phones += list(filter(lambda p: p != " ", self.g2p(w)))
         phones = "{sp " + " ".join(phones) + "}"
         phones = re.sub(r"\{[^\w\s]?\}", "{sp}", phones)
         phones = phones.replace("}{", " ")
