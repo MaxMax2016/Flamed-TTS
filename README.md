@@ -2,7 +2,7 @@
 
 [![python](https://img.shields.io/badge/Python-3.10-brightgreen)]([https://github.com/SWivid/F5-TTS](https://github.com/flamedtts/Flamed-TTS))
 [![arXiv](https://img.shields.io/badge/arXiv-2410.06885-b31b1b.svg?logo=arXiv)]()
-[![demo](https://img.shields.io/badge/GitHub-Demo%20page-orange.svg)](flamed-tts.github.io)
+[![demo](https://img.shields.io/badge/GitHub-Demo%20page-orange.svg)](https://flamed-tts.github.io/)
 
 ![Overall Architecture](https://github.com/flamedtts/Flamed-TTS/blob/main/figs/Flamed-TTS.png)
 <div align="center">
@@ -98,6 +98,7 @@ TBD.
 ## ⚠️ Disclaimer
 
 No individual or organization may use any technology described in this paper to generate, edit, or manipulate the speech of any person, including but not limited to government officials, political figures, or celebrities, without their explicit consent. Unauthorized use may violate applicable copyright, intellectual property, or privacy laws and could result in legal consequences.
+
 
 
 
